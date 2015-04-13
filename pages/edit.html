@@ -1,0 +1,40 @@
+<!-- 
+  Author - Anjana Wijesundara
+  Content - wsanjana951@gmail.com
+-->
+<h2>Edit Customer</h2>
+<div class="row" ng-controller='CustomerEditControler'>
+  <div class="col-md-6">
+  
+  <form novalidate ng-repeat="customer in CustomerDetail" name="AddNewForm" id="add-new-form" method="post" action="">
+    <input type="hidden" ng-model="customer.id" value="{{customer.id}}" />
+     <div class="form-group">
+      <label>Username</label>
+      <input class="form-control" type="text" ng-model="customer.Username" value="{{customer.Username}}" required />
+    </div>
+    <div class="form-group">
+      <label>First Name</label>
+      <input class="form-control" type="text" ng-model="customer.First_Name" value="{{customer.First_Name}}" required />
+    </div>
+     <div class="form-group">
+      <label>Last Name</label>
+      <input class="form-control" type="text" ng-model="customer.Last_Name" value="{{customer.Last_Name}}" required />
+    </div>
+    <div class="form-group">
+      <label >Email</label>
+      <input class="form-control" type="text" ng-model="customer.Email" value="{{customer.Email}}" required />
+    </div>
+    <div class="form-group">
+      <label>Status</label>
+      <input class="form-control" type="text" ng-model="customer.Status" value="{{customer.Status}}" required />
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(customer)" id="add-new-btn" ng-click="Update_Customer(customer)">Update
+    <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    <button class="btn btn-danger" ng-click="Delete_Customer(customer)">Delete <span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/" class="btn">Cancel</a>
+
+  </form>
+
+</div>
+</div>

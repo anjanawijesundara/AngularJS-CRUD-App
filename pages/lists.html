@@ -1,0 +1,31 @@
+<!-- 
+  Author - Anjana Wijesundara
+  Content - wsanjana951@gmail.com
+-->
+<h2>Customers</h2>
+
+<div ng-controller="CustomerListControler">
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="res in customers | orderBy: 'First_Name'">
+      <td>{{res.Username}}</td>
+      <td>{{res.First_Name}}</td>
+      <td>{{res.Last_Name}}</td>
+      <td>{{res.Email}}</td>
+      <td>{{res.Status}}</td>
+      <td><a href="#/UpdateCustomer/{{res.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" href="#/NewCustomer">Add New Customer</a>
+</div>

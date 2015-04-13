@@ -1,0 +1,41 @@
+<!-- 
+	Author - Anjana Wijesundara
+	Content - wsanjana951@gmail.com
+-->
+<h2>New Customer</h2>
+
+<div class="row" ng-controller="CustomerAddControler">
+<div class="col-md-6">
+
+	<form name="AddNewForm" id="add-new-form" method="post" action="">
+	 
+	  <div class="form-group">
+	  	<label for="name">Username</label>
+	  	<input class="form-control" type="text" ng-model="customer.Username" required />
+	  </div>
+
+	  <div class="form-group">
+	  	<label for="name">First Name</label>
+	  	<input class="form-control" type="text" ng-model="customer.First_Name" required />
+	  </div>
+
+	  <div class="form-group">
+	  	<label for="name">Last Name</label>
+	  	<input class="form-control" type="text" ng-model="customer.Last_Name" required />
+	  </div>
+
+	  <div class="form-group">
+	  	<label for="email">Email</label>
+	  	<input class="form-control" type="text" ng-model="customer.Email" required />
+	  </div>
+	  <div class="form-group">
+	  	<label for="country">Status</label>
+	  	<input class="form-control" type="text" ng-model="customer.Status" required />
+	  </div>
+	  
+	  <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(customer)" id="add-new-btn" ng-click="New_Customer(customer)">Save</button>
+	  <a href="#/" class="btn">Cancel</a>
+	</form>
+
+</div>
+</div>
